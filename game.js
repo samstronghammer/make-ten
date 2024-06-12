@@ -21,6 +21,7 @@ let cells = [],
 
 function init() {
 	window.addEventListener('pointerup', handlePointerUp);
+	document.getElementById('restart-btn').addEventListener('click', resetGame);
 	resetGame();
 }
 
@@ -40,7 +41,7 @@ function resetGame() {
 		}
 	}
 	
-	remainingTime = TIME_LIMIT;
+	timeIndicator.value = (remainingTime = TIME_LIMIT);
 	timerInterval = setInterval( () => {
 		timeIndicator.value = (Math.max(0, remainingTime -= 1));
 		if (remainingTime === 0) {

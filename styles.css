@@ -17,10 +17,13 @@ button {
 	cursor: pointer;
 	border: 0 none;
 	font: inherit;
-	font-size: 1.5rem;
+	color: inherit;
 	background: transparent;
 	padding: 4px;
 }
+	button:active {
+		color: white;
+	}
 	button:disabled {
 		opacity: 0.6;
 		cursor: not-allowed;
@@ -49,12 +52,21 @@ button {
 	border-radius: 0;
 }
 
+#restart-btn {
+	display: block;
+	margin-inline: auto;
+	text-transform: uppercase;
+}
+
 #game-grid {
 	display: grid;
 	grid-template-columns: repeat(11, 1fr);
 	grid-template-rows: repeat(16, 1fr);
 	touch-action: none;
 }
+	#game-grid button {
+		font-size: 1.5rem;
+	}
 
 #selection-rect {
 	pointer-events: none;
@@ -63,32 +75,32 @@ button {
 }
 
 .num0 {
-	color: transparent;
+	color: transparent !important;
 }
 .num1 {
-	color: #1d2b53;
+	color: #1d2b53 !important;
 }
 .num2 {
-	color: #7e2553;
+	color: #7e2553 !important;
 }
 .num3 {
-	color: #008751;
+	color: #008751 !important;
 }
 .num4 {
-	color: #ab5236;
+	color: #ab5236 !important;
 }
 .num5 {
-	color: #5f574f;
+	color: #5f574f !important;
 }
 .num6 {
-	color: #c2c3c7;
+	color: #c2c3c7 !important;
 }
 .num7 {
-	color: #fff1e8;
+	color: #fff1e8 !important;
 }
 .num8 {
-	color: #ff004d;
+	color: #ff004d !important;
 }
 .num9 {
-	color: #ffa300;
+	color: #ffa300 !important;
 }
