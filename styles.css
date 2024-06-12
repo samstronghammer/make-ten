@@ -1,0 +1,79 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+	margin: 0;
+	border: 0 none;
+	padding: 0;
+	
+	font-family: 'Press Start 2P', monospace;
+	background-color: black;
+	color: #c2c3c7;
+	font-size: 1.25rem;
+}
+
+button {
+	user-select: none;
+	cursor: pointer;
+	border: 0 none;
+	font: inherit;
+	font-size: 1.5rem;
+	background: transparent;
+	padding: 4px;
+}
+
+#score {
+	padding-block: 1em;
+	color: #29adff;
+	text-align: center;
+	text-transform: uppercase;
+}
+	#score::before {
+		content: 'Score: ';
+	}
+
+#game-grid {
+	display: grid;
+	grid-template-columns: repeat(11, 1fr);
+	grid-template-rows: repeat(16, 1fr);
+	max-width: 30rem; /* 480px default */
+	margin-inline: auto;
+	touch-action: none;
+}
+
+#selection-rect {
+	pointer-events: none;
+	border: 1px solid white;
+	box-sizing: border-box;
+}
+
+.num0 {
+	color: transparent;
+}
+.num1 {
+	color: #1d2b53;
+}
+.num2 {
+	color: #7e2553;
+}
+.num3 {
+	color: #008751;
+}
+.num4 {
+	color: #ab5236;
+}
+.num5 {
+	color: #5f574f;
+}
+.num6 {
+	color: #c2c3c7;
+}
+.num7 {
+	color: #fff1e8;
+}
+.num8 {
+	color: #ff004d;
+}
+.num9 {
+	color: #ffa300;
+}
