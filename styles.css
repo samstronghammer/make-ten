@@ -21,9 +21,13 @@ button {
 	background: transparent;
 	padding: 4px;
 }
+	button:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
 
 #score {
-	padding-block: 1em;
+	margin-block: 1em;
 	color: #29adff;
 	text-align: center;
 	text-transform: uppercase;
@@ -32,12 +36,23 @@ button {
 		content: 'Score: ';
 	}
 
+#time-indicator,
+#game-grid {
+	width: 100%;
+	max-width: 30rem; /* 480px default */
+	margin-inline: auto;
+}
+
+#time-indicator {
+	display: block;
+	margin-block: 1em;
+	border-radius: 0;
+}
+
 #game-grid {
 	display: grid;
 	grid-template-columns: repeat(11, 1fr);
 	grid-template-rows: repeat(16, 1fr);
-	max-width: 30rem; /* 480px default */
-	margin-inline: auto;
 	touch-action: none;
 }
 

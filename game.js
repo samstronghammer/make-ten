@@ -1,9 +1,11 @@
 const GRID_WIDTH = 11,
-	GRID_HEIGHT = 16;
+	GRID_HEIGHT = 16,
+	TIME_LIMIT = 120; // 2 minutes in seconds.
 
 const scoreDisplay = document.getElementById('score'),
 	gameGrid = document.getElementById('game-grid'),
-	selectionRect = document.getElementById('selection-rect');
+	selectionRect = document.getElementById('selection-rect'),
+	timeIndicator = document.getElementById('time-indicator');
 
 	/** {Array<Array<HTMLButtonElement>>} */
 let cells = [],
@@ -11,6 +13,9 @@ let cells = [],
 	pointerDragging = false,
 	/** {Number} */
 	score = 0,
+	/** {Number} seconds */
+	remainingTime = 0,
+	timerInterval,
 	/** {Object<String,Number> */
 	selection;
 
@@ -32,6 +37,27 @@ function resetGame() {
 			cells[y][x].style.gridRow = (y + 1);
 			cells[y][x].style.gridColumn = (x + 1);
 			gameGrid.appendChild(cells[y][x]);
+		}
+	}
+	
+	remainingTime = TIME_LIMIT;
+	timerInterval = setInterval( () => {
+		timeIndicator.value = (Math.max(0, remainingTime -= 1));
+		if (remainingTime === 0) {
+			endGame();
+		}
+	}, 1000);
+}
+
+function endGame() {
+	clearInterval(timerInterval);
+	if (selection) {
+		selection = undefined;
+		gameGrid.removeChild(selectionRect);
+	}
+	for (let y = 0; y < GRID_HEIGHT; y++) {
+		for (let x = 0; x < GRID_WIDTH; x++) {
+			cells[y][x].disabled = true;
 		}
 	}
 }
@@ -87,6 +113,8 @@ function clearSelectionCells() {
 }
 
 function handleCellPointerDown(ev) {
+	if (remainingTime === 0) { return; }
+	
 	ev.preventDefault();
 	ev.target.releasePointerCapture(ev.pointerId); // Cancel implicit button pointer capture.
 	
