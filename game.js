@@ -69,7 +69,7 @@ function endGame() {
  * @returns {HTMLButtonElement}
  */
 function createGridBtn() {
-	const value = Math.floor(Math.random() * 8) + 1,
+	const value = Math.round(Math.random() * 8) + 1, // Random integer 1-9.
 		btn = document.createElement('button');
 	btn.textContent = value;
 	btn.numValue = value;
