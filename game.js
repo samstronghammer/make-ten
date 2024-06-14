@@ -42,6 +42,7 @@ function resetGame() {
 	}
 	
 	timeIndicator.value = (remainingTime = TIME_LIMIT);
+	clearInterval(timerInterval);
 	timerInterval = setInterval( () => {
 		timeIndicator.value = (Math.max(0, remainingTime -= 1));
 		if (remainingTime === 0) {
