@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Make 10</title>
-		<meta name="viewport" content="width=device-width" />
-		<link rel="stylesheet" type="text/css" href="styles.css" />
-		<script defer src="game.js"></script>
-	</head>
-	<body>
-		<div id="score"></div>
-		<div id="game-grid" touch-action="none">
-			<div id="selection-rect"></div>
-		</div>
-		<meter min="0" max="120" id="time-indicator"></meter>
-		<button id="restart-btn">Restart</button>
-		<footer>
-			By <a href="https://zmyaro.com" target="_blank">Zachary Yaro</a>
-			&nbsp;&middot;&nbsp;
-			Based on <a href="https://pancelor.itch.io/make-ten" target="_blank">this version by pancelor</a>
-			&nbsp;&middot;&nbsp;
-			<a href="https://github.com/zmyaro/make-ten" target="_blank">Source code</a>
-		</footer>
-	</body>
+
+<head>
+  <title>Make 10</title>
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script defer src="game.js"></script>
+</head>
+
+<body>
+  <div id="score"></div>
+  <div id="game-grid" touch-action="none">
+    <div id="selection-rect"></div>
+  </div>
+  <meter min="0" max="120" id="time-indicator"></meter>
+  <button id="restart-btn-timed" class="restart-btn">Play Timed</button>
+  <button id="restart-btn-infinite" class="restart-btn">Play Infinite</button>
+  <footer>
+    By <a href="https://sam.luna-nelson.com" target="_blank">Sam Luna-Nelson</a>
+    &nbsp;&middot;&nbsp;
+    Based on <a href="https://maketen.zmyaro.com/" target="_blank">this version by Zachary Yaro</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://github.com/samstronghammer/make-ten" target="_blank">Source code</a>
+  </footer>
+</body>
+
 </html>

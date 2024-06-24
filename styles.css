@@ -1,120 +1,135 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Tiny5&display=swap');
 
 body {
-	margin: 0;
-	border: 0 none;
-	padding: 0;
-	
-	font-family: 'Press Start 2P', monospace;
-	color-scheme: dark;
-	background-color: black;
-	color: #c2c3c7;
-	font-size: 1.25rem;
-	
-	/* Make room for the footer. */
-	padding-block-end: calc(0.75rem + 8px + 8px);
+  margin: 0;
+  border: 0 none;
+  padding: 0;
+
+  font-family: 'Press Start 2P', monospace;
+  color-scheme: dark;
+  background-color: black;
+  color: #c2c3c7;
+  font-size: 1.25rem;
+
+  /* Make room for the footer. */
+  padding-block-end: calc(0.75rem + 8px + 8px);
 }
 
 footer {
-	position: fixed;
-	inset-inline: 0;
-	inset-block-end: 0;
-	padding-block: 4px;
-	text-align: center;
-	font-family: 'Tiny5', monospace;
-	font-size: 0.75rem; /* 12px default */
-	background-color: black;
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  padding-block: 4px;
+  text-align: center;
+  font-family: 'Tiny5', monospace;
+  font-size: 0.75rem;
+  /* 12px default */
+  background-color: black;
 }
 
 button {
-	user-select: none;
-	cursor: pointer;
-	border: 0 none;
-	font: inherit;
-	color: inherit;
-	background: transparent;
-	padding: 4px;
+  user-select: none;
+  cursor: pointer;
+  border: 0 none;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  padding: 4px;
 }
-	button:active {
-		color: white;
-	}
-	button:disabled {
-		opacity: 0.6;
-		cursor: not-allowed;
-	}
+
+button:active {
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
 #score {
-	margin-block: 1em;
-	color: #29adff;
-	text-align: center;
-	text-transform: uppercase;
+  margin-block: 1em;
+  color: #29adff;
+  text-align: center;
+  text-transform: uppercase;
 }
-	#score::before {
-		content: 'Score: ';
-	}
+
+#score::before {
+  content: 'Score: ';
+}
 
 #time-indicator,
 #game-grid {
-	width: 100%;
-	max-width: 30rem; /* 480px default */
-	margin-inline: auto;
+  width: 100%;
+  max-width: 30rem;
+  /* 480px default */
+  margin-inline: auto;
 }
 
 #time-indicator {
-	display: block;
-	margin-block: 1em;
-	border-radius: 0;
+  display: block;
+  margin-block: 1em;
+  border-radius: 0;
 }
 
-#restart-btn {
-	display: block;
-	margin-inline: auto;
-	text-transform: uppercase;
+.restart-btn {
+  display: block;
+  margin-inline: auto;
+  text-transform: uppercase;
 }
 
 #game-grid {
-	display: grid;
-	grid-template-columns: repeat(11, 1fr);
-	grid-template-rows: repeat(16, 1fr);
-	touch-action: none;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  touch-action: none;
 }
-	#game-grid button {
-		font-size: 1.5rem;
-	}
+
+#game-grid button {
+  font-size: 1.5rem;
+}
 
 #selection-rect {
-	pointer-events: none;
-	border: 1px solid white;
-	box-sizing: border-box;
+  pointer-events: none;
+  border: 1px solid white;
+  box-sizing: border-box;
 }
 
 .num0 {
-	color: transparent !important;
+  color: transparent !important;
 }
+
 .num1 {
-	color: #1d2b53 !important;
+  color: #1d2b53 !important;
 }
+
 .num2 {
-	color: #7e2553 !important;
+  color: #7e2553 !important;
 }
+
 .num3 {
-	color: #008751 !important;
+  color: #008751 !important;
 }
+
 .num4 {
-	color: #ab5236 !important;
+  color: #ab5236 !important;
 }
+
 .num5 {
-	color: #5f574f !important;
+  color: #5f574f !important;
 }
+
 .num6 {
-	color: #c2c3c7 !important;
+  color: #c2c3c7 !important;
 }
+
 .num7 {
-	color: #fff1e8 !important;
+  color: #fff1e8 !important;
 }
+
 .num8 {
-	color: #ff004d !important;
+  color: #ff004d !important;
 }
+
 .num9 {
-	color: #ffa300 !important;
+  color: #ffa300 !important;
 }
