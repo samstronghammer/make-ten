@@ -1,7 +1,8 @@
 // IMPORTANT: Do not make width and height both odd!! It'll break the algorithm!
 const GRID_WIDTH = 11,
   GRID_HEIGHT = 16,
-  TIME_LIMIT = 120; // 2 minutes in seconds.
+  TIME_LIMIT = 120, // 2 minutes in seconds.
+  CLEAR_BONUS = 500;
 
 const scoreDisplay = document.getElementById('score'),
   gameGrid = document.getElementById('game-grid'),
@@ -356,9 +357,13 @@ function handlePointerUp(ev) {
   // Clear the selection.
   selection = undefined;
   gameGrid.removeChild(selectionRect);
-  // TODO if no valid moves, end the game
   const grid = calcButtonGrid();
-  if (!hasMove(grid)) endGame();
+  if (!hasMove(grid)) {
+    if (isEmpty(grid)) {
+      scoreDisplay.textContent = (score += CLEAR_BONUS);
+    }
+    endGame()
+  }
 }
 
 
@@ -405,5 +410,14 @@ const hasMove = (grid) => {
   return false;
 }
 
+const isEmpty = (grid) => {
+  for (let row = 0; row < GRID_HEIGHT; row++) {
+    for (let col = row; col < GRID_WIDTH; col++) {
+      const p = new Point(row, col)
+      if (grid.has(p.toString())) return false;
+    }
+  }
+  return true;
+}
 
 window.addEventListener('DOMContentLoaded', init);
